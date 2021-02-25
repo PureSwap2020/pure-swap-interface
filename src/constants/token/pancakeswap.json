@@ -1,0 +1,45 @@
+{
+  "name": "pancakeswap",
+  "timestamp": "2020-08-25T15:41:29.665Z",
+  "version": {
+    "major": 1,
+    "minor": 3,
+    "patch": 1
+  },
+  "tags": {},
+  "logoURI": "https://assets.coingecko.com/coins/images/2822/thumb/huobi-token-logo.png?1547036992",
+  "keywords": [
+    "pancake",
+    "default"
+  ],
+  "tokens": [
+    {
+      "name": "WHT Token",
+      "symbol": "WHT",
+      "address": "0x1d779aa3760aeb24386d8d01a7a7728723eb8ddd",
+      "chainId": 128,
+      "decimals": 18
+    },
+    {
+      "name": "WHT Token",
+      "symbol": "WHT",
+      "address": "0x7af326b6351c8a9b8fb8cd205cbe11d4ac5fa836",
+      "chainId": 256,
+      "decimals": 18
+    },
+    {
+      "name": "DAI",
+      "symbol": "DAI",
+      "address": "0x60d64Ef311a4F0E288120543A14e7f90E76304c6",
+      "chainId": 256,
+      "decimals": 18
+    },
+    {
+      "name": "USDT",
+      "symbol": "USDT",
+      "address": "0x04F535663110A392A6504839BEeD34E019FdB4E0",
+      "chainId": 256,
+      "decimals": 6
+    }
+  ]
+}
