@@ -41,7 +41,7 @@ const handleColor = (type: string | undefined) => {
 
 const PureLinkExternal = styled(LinkExternal)`
   font-weight: 600;
-  font-size: 15px;
+  font-size: 14px;
   margin-left: 10px;
   color: ${props => handleColor(props.color)};
 `
@@ -86,7 +86,7 @@ const RecentTransactionsModal = ({ onDismiss = defaultOnDismiss }: RecentTransac
 
           return (
             <>
-              <Flex key={hash} alignItems="center" justifyContent="center" mb="4px">
+              <Flex key={hash} alignItems="center" justifyContent="flex-start" mb="6px" pl="20px">
                 {icon}
                 <PureLinkExternal href={getEtherscanLink(chainId, hash, 'transaction')} color={color}>
                   {summary ?? hash}

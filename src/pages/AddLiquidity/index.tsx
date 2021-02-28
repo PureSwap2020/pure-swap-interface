@@ -213,38 +213,38 @@ export default function AddLiquidity({
 
   const modalHeader = () => {
     return noLiquidity ? (
-      <AutoColumn gap="20px">
+      <AutoColumn gap="10px">
         <LightCard mt="20px" borderRadius="20px">
           <RowFlat>
-            <UIKitText fontSize="48px" mr="8px">
+            <UIKitText fontSize="30px" mt="8px">
               {`${currencies[Field.CURRENCY_A]?.symbol}/${currencies[Field.CURRENCY_B]?.symbol}`}
             </UIKitText>
             <DoubleCurrencyLogo
               currency0={currencies[Field.CURRENCY_A]}
               currency1={currencies[Field.CURRENCY_B]}
-              size={30}
+              size={22}
             />
           </RowFlat>
         </LightCard>
       </AutoColumn>
     ) : (
-      <AutoColumn gap="20px">
-        <RowFlat style={{ marginTop: '20px' }}>
-          <UIKitText fontSize="48px" mr="8px">
-            {liquidityMinted?.toSignificant(6)}
-          </UIKitText>
+      <AutoColumn gap="10px">
+        <div style={{ marginTop: '20px' }}>
           <DoubleCurrencyLogo
             currency0={currencies[Field.CURRENCY_A]}
             currency1={currencies[Field.CURRENCY_B]}
-            size={30}
+            size={22}
           />
-        </RowFlat>
+          <UIKitText fontSize="28px" mt="15px">
+            {liquidityMinted?.toSignificant(6)}
+          </UIKitText>
+        </div>
         <Row>
-          <UIKitText fontSize="24px">
+          <UIKitText fontSize="16px" color="#ABDFCC">
             {`${currencies[Field.CURRENCY_A]?.symbol}/${currencies[Field.CURRENCY_B]?.symbol} Pool Tokens`}
           </UIKitText>
         </Row>
-        <Italic fontSize={12} textAlign="left" padding="8px 0 0 0 ">
+        <Italic color="#366061" fontSize={12} textAlign="left" padding="0 0 0 0 ">
           {`Output is estimated. If the price changes by more than ${
             allowedSlippage / 100
           }% your transaction will revert.`}

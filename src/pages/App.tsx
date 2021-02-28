@@ -31,8 +31,11 @@ const BodyWrapper = styled.div`
   overflow-y: auto;
   overflow-x: hidden;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  background-image: url('/images/group-pancake.svg');
+  //background-image: url('/images/group-pancake.svg');
   background-repeat: no-repeat;
   background-position: bottom 24px center;
   background-size: 90%;

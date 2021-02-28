@@ -21,6 +21,7 @@ import TranslatedText from 'components/TranslatedText'
 import { TranslateString } from 'utils/translateTextHelpers'
 import PageHeader from 'components/PageHeader'
 import AppBody from '../AppBody'
+import { PureText } from '../../components/styles'
 
 const { body: Body } = TYPE
 
@@ -110,17 +111,17 @@ export default function Pool() {
               )}
 
               <div>
-                <Text fontSize="14px" style={{ padding: '.5rem 0 .5rem 0' }}>
+                <PureText fontSize="14px" style={{ padding: '.5rem 0 .5rem 0' }}>
                   {hasV1Liquidity
                     ? 'Uniswap V1 liquidity found!'
                     : TranslateString(106, "Don't see a pool you joined?")}{' '}
                   <StyledInternalLink id="import-pool-link" to={hasV1Liquidity ? '/migrate/v1' : '/find'}>
                     {hasV1Liquidity ? 'Migrate now.' : TranslateString(108, 'Import it.')}
                   </StyledInternalLink>
-                </Text>
-                <Text fontSize="14px" style={{ padding: '.5rem 0 .5rem 0' }}>
+                </PureText>
+                <PureText fontSize="14px" style={{ padding: '.5rem 0 .5rem 0' }}>
                   Or, if you staked your FLIP tokens in a farm, unstake them to see them here.
-                </Text>
+                </PureText>
               </div>
             </AutoColumn>
           </CardBody>

@@ -5,8 +5,12 @@ export const PureCard = styled(Card)`
   background-color: #082F33;
 `
 
-const PureText = styled(Text)`
-  color: #366061
+export const PureText = styled(Text)`
+  color: #366061;
+`
+
+export const PurePrimaryText = styled(Text)`
+  color: #ABDFCC;
 `
 
 export const get = () => {

@@ -35,11 +35,11 @@ import { maxAmountSpend } from 'utils/maxAmountSpend'
 import { computeTradePriceBreakdown, warningSeverity } from 'utils/prices'
 import Loader from 'components/Loader'
 import { TranslateString } from 'utils/translateTextHelpers'
-import PageHeader from 'components/PageHeader'
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import AppBody from '../AppBody'
 import SettingsModal from '../../components/PageHeader/SettingsModal'
 import RecentTransactionsModal from '../../components/PageHeader/RecentTransactionsModal'
+import PageHeader from '../../components/PageHeader'
 
 const CogIcon = () => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -68,6 +68,18 @@ const PureIconButton = styled(IconButton)`
   &:focus:not(:active) {
     box-shadow: none;
   }
+`
+
+const PurePageTitle = styled.div`
+  color: #19D6AD;
+  font-size: 50px;
+  margin-bottom: 10px;
+`
+
+const PurePageDesc = styled.div`
+  font-size: 16px;
+  color: #686868;
+  margin-bottom: 50px;
 `
 
 const Swap = () => {
@@ -339,12 +351,7 @@ const Swap = () => {
             swapErrorMessage={swapErrorMessage}
             onDismiss={handleConfirmDismiss}
           />
-          <PureIconButton variant="text" onClick={onPresentSettings} title="Settings" style={{position: 'absolute', top: '10px', right: '10px', zIndex: 100, background: 'transparent'}}>
-            <CogIcon />
-          </PureIconButton>
-          <PureIconButton variant="text" onClick={onPresentRecentTransactions} title="Recent transactions" style={{position: 'absolute', top: '10px', right: '40px', zIndex: 100, background: 'transparent'}}>
-            <HistoryIcon />
-          </PureIconButton>
+          <PageHeader title="Exchange" description="Trade tokens in an instant" />
           <CardBody>
             <AutoColumn gap="md">
               <CurrencyInputPanel

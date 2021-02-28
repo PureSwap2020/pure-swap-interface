@@ -4,6 +4,7 @@ import { Input, Text } from '@pancakeswap-libs/uikit'
 import { useUserDeadline } from 'state/user/hooks'
 import QuestionHelper from '../QuestionHelper'
 import TranslatedText from '../TranslatedText'
+import { PurePrimaryText } from '../styles'
 
 const StyledTransactionDeadlineSetting = styled.div`
   margin-bottom: 16px;
@@ -57,9 +58,9 @@ const TransactionDeadlineSetting = () => {
   return (
     <StyledTransactionDeadlineSetting>
       <Label>
-        <Text style={{ fontWeight: 600 }}>
+        <PurePrimaryText style={{ fontWeight: 600 }}>
           <TranslatedText translationId={90}>Transaction deadline</TranslatedText>
-        </Text>
+        </PurePrimaryText>
         <QuestionHelper text='Your transaction will revert if it is pending for more than this long.' />
       </Label>
       <Field>

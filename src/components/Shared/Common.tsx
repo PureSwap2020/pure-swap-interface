@@ -65,8 +65,10 @@ export const LinkStyledButton = styled.button<{ disabled?: boolean }>`
 export const StyledInternalLink = styled(Link)`
   text-decoration: none;
   cursor: pointer;
-  color: ${({ theme }) => theme.colors.primary};
+  //color: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => '#ACE0CD'};
   font-weight: 500;
+  font-size: 16px;
 
   :hover {
     text-decoration: underline;

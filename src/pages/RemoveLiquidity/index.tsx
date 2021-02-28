@@ -39,13 +39,15 @@ import { useBurnActionHandlers, useDerivedBurnInfo, useBurnState } from '../../s
 
 import { Field } from '../../state/burn/actions'
 import { useUserDeadline, useUserSlippageTolerance } from '../../state/user/hooks'
+import { PurePrimaryText, PureText } from '../../components/styles'
 
 const { italic: Italic } = TYPE
 
 const OutlineCard = styled.div`
-  border: 1px solid ${({ theme }) => theme.colors.borderColor};
+  //border: 1px solid ${({ theme }) => theme.colors.borderColor};
+  border: 1px solid ${({ theme }) => '#366061'};
   border-radius: 16px;
-  padding: 24px;
+  padding: 20px;
 `
 
 const Body = styled.div`
@@ -469,7 +471,7 @@ export default function RemoveLiquidity({
               <OutlineCard>
                 <AutoColumn>
                   <RowBetween>
-                    <Text>Amount</Text>
+                    <PureText>Amount</PureText>
                     <ClickableText
                       onClick={() => {
                         setShowDetailed(!showDetailed)
@@ -479,7 +481,7 @@ export default function RemoveLiquidity({
                     </ClickableText>
                   </RowBetween>
                   <Flex justifyContent="start">
-                    <Text fontSize="64px">{formattedAmounts[Field.LIQUIDITY_PERCENT]}%</Text>
+                    <Text fontSize="54px">{formattedAmounts[Field.LIQUIDITY_PERCENT]}%</Text>
                   </Flex>
                   {!showDetailed && (
                     <>
@@ -516,23 +518,23 @@ export default function RemoveLiquidity({
                 </ColumnCenter>
                 <Body>
                   <OutlineCard>
-                    <AutoColumn gap="10px">
+                    <AutoColumn gap="5px">
                       <RowBetween>
-                        <Text fontSize="24px">{formattedAmounts[Field.CURRENCY_A] || '-'}</Text>
+                        <Text fontSize="16px">{formattedAmounts[Field.CURRENCY_A] || '-'}</Text>
                         <RowFixed>
-                          <CurrencyLogo currency={currencyA} style={{ marginRight: '12px' }} />
-                          <Text fontSize="24px" id="remove-liquidity-tokena-symbol">
+                          <CurrencyLogo size="16px" currency={currencyA} style={{ marginRight: '12px' }} />
+                          <PureText fontSize="16px" id="remove-liquidity-tokena-symbol">
                             {currencyA?.symbol}
-                          </Text>
+                          </PureText>
                         </RowFixed>
                       </RowBetween>
                       <RowBetween>
-                        <Text fontSize="24px">{formattedAmounts[Field.CURRENCY_B] || '-'}</Text>
+                        <Text fontSize="16px">{formattedAmounts[Field.CURRENCY_B] || '-'}</Text>
                         <RowFixed>
-                          <CurrencyLogo currency={currencyB} style={{ marginRight: '12px' }} />
-                          <Text fontSize="24px" id="remove-liquidity-tokenb-symbol">
+                          <CurrencyLogo size="16px" currency={currencyB} style={{ marginRight: '12px' }} />
+                          <PureText fontSize="16px" id="remove-liquidity-tokenb-symbol">
                             {currencyB?.symbol}
-                          </Text>
+                          </PureText>
                         </RowFixed>
                       </RowBetween>
                       {chainId && (oneCurrencyIsWETH || oneCurrencyIsETH) ? (
@@ -543,7 +545,7 @@ export default function RemoveLiquidity({
                                 currencyB === ETHER ? WETH[chainId].address : currencyIdB
                               }`}
                             >
-                              Receive WBNB
+                              Receive WHT
                             </StyledInternalLink>
                           ) : oneCurrencyIsWETH ? (
                             <StyledInternalLink
@@ -551,7 +553,7 @@ export default function RemoveLiquidity({
                                 currencyA && currencyEquals(currencyA, WETH[chainId]) ? 'ETH' : currencyIdA
                               }/${currencyB && currencyEquals(currencyB, WETH[chainId]) ? 'ETH' : currencyIdB}`}
                             >
-                              Receive BNB
+                              Receive HT
                             </StyledInternalLink>
                           ) : null}
                         </RowBetween>
@@ -609,16 +611,18 @@ export default function RemoveLiquidity({
               {pair && (
                 <div style={{ padding: '24px' }}>
                   <Flex justifyContent="space-between" mb="8px">
-                    Price:
-                    <div>
+                    <PureText>
+                      Price:
+                    </PureText>
+                    <PurePrimaryText>
                       1 {currencyA?.symbol} = {tokenA ? pair.priceOf(tokenA).toSignificant(6) : '-'} {currencyB?.symbol}
-                    </div>
+                    </PurePrimaryText>
                   </Flex>
                   <Flex justifyContent="space-between">
                     <div />
-                    <div>
+                    <PurePrimaryText>
                       1 {currencyB?.symbol} = {tokenB ? pair.priceOf(tokenB).toSignificant(6) : '-'} {currencyA?.symbol}
-                    </div>
+                    </PurePrimaryText>
                   </Flex>
                 </div>
               )}

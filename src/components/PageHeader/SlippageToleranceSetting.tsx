@@ -4,6 +4,7 @@ import { Button, Flex, Input, Text } from '@pancakeswap-libs/uikit'
 import { useUserSlippageTolerance } from 'state/user/hooks'
 import QuestionHelper from '../QuestionHelper'
 import TranslatedText from '../TranslatedText'
+import { PurePrimaryText, PureText } from '../styles'
 
 const MAX_SLIPPAGE = 5000
 const RISKY_SLIPPAGE_LOW = 50
@@ -84,9 +85,9 @@ const SlippageToleranceSettings = () => {
   return (
     <StyledSlippageToleranceSettings>
       <Label>
-        <Text style={{ fontWeight: 600 }}>
+        <PurePrimaryText style={{ fontWeight: 600 }}>
           <TranslatedText translationId={88}>Slippage tolerance</TranslatedText>
-        </Text>
+        </PurePrimaryText>
         <QuestionHelper text="Your transaction will revert if the price changes unfavorably by more than this percentage." />
       </Label>
       <Options>
