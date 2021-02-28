@@ -96,7 +96,7 @@ const SlippageToleranceSettings = () => {
 
             return (
               <Option key={predefinedValue}>
-                <Button variant={value === predefinedValue ? 'primary' : 'tertiary'} onClick={handleClick}>
+                <Button style={{background: 'none', padding: '0 10px', height: '28px', borderColor: '#f0f0f0 !important'}} variant={value === predefinedValue ? 'primary' : 'tertiary'} onClick={handleClick}>
                   {label}
                 </Button>
               </Option>
@@ -106,6 +106,7 @@ const SlippageToleranceSettings = () => {
         <Flex alignItems="center">
           <Option>
             <Input
+              style={{height: '28px', backgroundColor: 'transparent', border: '1px solid #366061'}}
               type="number"
               scale="lg"
               step={0.1}

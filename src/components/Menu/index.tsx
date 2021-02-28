@@ -26,10 +26,6 @@ const Menu: React.FC = (props) => {
           return activate(walletconnect)
         }
 
-        if (connectorId === 'bsc') {
-          return activate(bsc)
-        }
-
         return activate(injected)
       }}
       logout={deactivate}

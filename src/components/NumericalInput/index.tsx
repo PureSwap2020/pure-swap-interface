@@ -59,6 +59,7 @@ export const Input = React.memo(function InnerInput({
 
   return (
     <StyledInput
+      style={{color: '#ACE0CD', fontSize: '22px'}}
       {...rest}
       value={value}
       onChange={event => {

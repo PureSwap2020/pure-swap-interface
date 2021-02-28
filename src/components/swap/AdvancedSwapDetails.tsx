@@ -1,4 +1,5 @@
 import React from 'react'
+import styled from 'styled-components'
 import { Trade, TradeType } from '@forever9/mxswap-sdk'
 import { Card, CardBody, Text } from '@pancakeswap-libs/uikit'
 import { Field } from '../../state/swap/actions'
@@ -10,6 +11,11 @@ import { RowBetween, RowFixed } from '../Row'
 import FormattedPriceImpact from './FormattedPriceImpact'
 import { SectionBreak } from './styleds'
 import SwapRoute from './SwapRoute'
+import { PureCard } from '../styles'
+
+const PureText = styled(Text)`
+  color: #366061
+`
 
 function TradeSummary({ trade, allowedSlippage }: { trade: Trade; allowedSlippage: number }) {
   const { priceImpactWithoutFee, realizedLPFee } = computeTradePriceBreakdown(trade)
@@ -17,26 +23,26 @@ function TradeSummary({ trade, allowedSlippage }: { trade: Trade; allowedSlippag
   const slippageAdjustedAmounts = computeSlippageAdjustedAmounts(trade, allowedSlippage)
 
   return (
-    <Card>
+    <PureCard>
       <CardBody>
-        <RowBetween>
+        <RowBetween style={{marginBottom: '10px'}}>
           <RowFixed>
-            <Text fontSize="14px">{isExactIn ? 'Minimum received' : 'Maximum sold'}</Text>
+            <PureText fontSize="14px">{isExactIn ? 'Minimum received' : 'Maximum sold'}</PureText>
             <QuestionHelper text="Your transaction will revert if there is a large, unfavorable price movement before it is confirmed." />
           </RowFixed>
           <RowFixed>
-            <Text fontSize="14px">
+            <PureText fontSize="14px">
               {isExactIn
                 ? `${slippageAdjustedAmounts[Field.OUTPUT]?.toSignificant(4)} ${trade.outputAmount.currency.symbol}` ??
                   '-'
                 : `${slippageAdjustedAmounts[Field.INPUT]?.toSignificant(4)} ${trade.inputAmount.currency.symbol}` ??
                   '-'}
-            </Text>
+            </PureText>
           </RowFixed>
         </RowBetween>
-        <RowBetween>
+        <RowBetween style={{marginBottom: '10px'}}>
           <RowFixed>
-            <Text fontSize="14px">Price Impact</Text>
+            <PureText fontSize="14px">Price Impact</PureText>
             <QuestionHelper text="The difference between the market price and estimated price due to trade size." />
           </RowFixed>
           <FormattedPriceImpact priceImpact={priceImpactWithoutFee} />
@@ -44,15 +50,15 @@ function TradeSummary({ trade, allowedSlippage }: { trade: Trade; allowedSlippag
 
         <RowBetween>
           <RowFixed>
-            <Text fontSize="14px">Liquidity Provider Fee</Text>
+            <PureText fontSize="14px">Liquidity Provider Fee</PureText>
             <QuestionHelper text="For each trade a 0.2% fee is paid. 0.17% goes to liquidity providers and 0.03% goes to the PancakeSwap treasury." />
           </RowFixed>
-          <Text fontSize="14px">
+          <PureText fontSize="14px">
             {realizedLPFee ? `${realizedLPFee.toSignificant(4)} ${trade.inputAmount.currency.symbol}` : '-'}
-          </Text>
+          </PureText>
         </RowBetween>
       </CardBody>
-    </Card>
+    </PureCard>
   )
 }
 

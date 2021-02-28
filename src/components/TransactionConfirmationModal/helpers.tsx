@@ -7,6 +7,9 @@ import { AutoColumn, ColumnCenter } from '../Column'
 export const Wrapper = styled.div`
   width: 100%;
   overflow-y: auto;
+  background-color: #1C4346;
+  padding: 30px 40px;
+  position: relative;
 `
 export const Section = styled(AutoColumn)`
   padding: 24px;
@@ -39,11 +42,25 @@ type ContentHeaderProps = {
   onDismiss: () => void
 }
 
+const PureIconButton = styled(IconButton)`
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #ACE0CD;
+`
+
+const PureHeading = styled(Heading)`
+  font-size: 34px;
+  text-align: center;
+  margin: 20px 0 30px;
+  line-height: 40px;
+`
+
 export const ContentHeader = ({ children, onDismiss }: ContentHeaderProps) => (
   <StyledContentHeader>
-    <Heading>{children}</Heading>
-    <IconButton onClick={onDismiss} variant="text">
+    <PureHeading>{children}</PureHeading>
+    <PureIconButton onClick={onDismiss} variant="text">
       <CloseIcon color="primary" />
-    </IconButton>
+    </PureIconButton>
   </StyledContentHeader>
 )

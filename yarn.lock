@@ -1783,10 +1783,10 @@
     "@ethersproject/properties" "^5.0.7"
     "@ethersproject/strings" "^5.0.8"
 
-"@forever9/mxswap-sdk@^1.0.3":
-  version "1.0.3"
-  resolved "https://registry.npmjs.org/@forever9/mxswap-sdk/-/mxswap-sdk-1.0.3.tgz#6abdc3394797bcdae3c66b768e2fd747b9433223"
-  integrity sha512-fUgTyTwjDhzotC4SAbFzKu/lpjFVOCDWHHh0hqfPDwcOShE/howXIMduhbP7zurGVUmvTDgNt0C6dTKpu+wDqA==
+"@forever9/mxswap-sdk@^1.0.5":
+  version "1.0.5"
+  resolved "https://registry.npmjs.org/@forever9/mxswap-sdk/-/mxswap-sdk-1.0.5.tgz#55c3693c7b3146b16b645329c84714a77e97c943"
+  integrity sha512-UVNEHbUsWu6kCCKWht+9SpBMuGxowergeVjmSvV8l1mGVuaZpHcbMoX6lgrtrUqZzMZetdjvyjYfjBcdzJw5VQ==
   dependencies:
     "@pancakeswap-libs/pancake-swap-core" "^0.1.0"
     big.js "^5.2.2"
@@ -2111,8 +2111,9 @@
     tiny-warning "^1.0.3"
     toformat "^2.0.0"
 
-"@pancakeswap-libs/uikit@file:../Pure-uikit":
+"@pancakeswap-libs/uikit@https://github.com/PureSwap2020/Pure-uikit.git":
   version "0.11.0"
+  resolved "https://github.com/PureSwap2020/Pure-uikit.git#cab9e3718d6d9451cad273c2b16604abc20c9d5a"
   dependencies:
     "@types/lodash" "^4.14.162"
     "@types/styled-system" "^5.1.10"

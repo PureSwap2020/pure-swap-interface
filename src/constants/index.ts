@@ -1,6 +1,6 @@
 import { ChainId, JSBI, Percent, Token, WETH } from '@forever9/mxswap-sdk'
 
-export const ROUTER_ADDRESS = '0x4A7BCafC2cc0974F327fA77B752601B5b38e9E96'
+export const ROUTER_ADDRESS = '0x280c891042510f5f1807d7d3D1D1C9C50D3152b9'
 
 // a list of tokens by chain
 type ChainTokenList = {

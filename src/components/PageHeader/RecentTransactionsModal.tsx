@@ -5,6 +5,7 @@ import { getEtherscanLink } from 'utils'
 import { isTransactionRecent, useAllTransactions } from 'state/transactions/hooks'
 import { TransactionDetails } from 'state/transactions/reducer'
 import Loader from 'components/Loader'
+import styled from 'styled-components'
 
 type RecentTransactionsModalProps = {
   onDismiss?: () => void
@@ -28,6 +29,22 @@ const getRowStatus = (sortedRecentTransaction: TransactionDetails) => {
 
   return { icon: <ErrorIcon color="failure" />, color: 'failure' }
 }
+
+const handleColor = (type: string | undefined) => {
+  switch (type) {
+    case 'failure':
+      return '#D63232'
+    default:
+      return '#ABDFCC'
+  }
+}
+
+const PureLinkExternal = styled(LinkExternal)`
+  font-weight: 600;
+  font-size: 15px;
+  margin-left: 10px;
+  color: ${props => handleColor(props.color)};
+`
 
 const RecentTransactionsModal = ({ onDismiss = defaultOnDismiss }: RecentTransactionsModalProps) => {
   const { account, chainId } = useActiveWeb3React()
@@ -69,11 +86,11 @@ const RecentTransactionsModal = ({ onDismiss = defaultOnDismiss }: RecentTransac
 
           return (
             <>
-              <Flex key={hash} alignItems="center" justifyContent="space-between" mb="4px">
-                <LinkExternal href={getEtherscanLink(chainId, hash, 'transaction')} color={color}>
-                  {summary ?? hash}
-                </LinkExternal>
+              <Flex key={hash} alignItems="center" justifyContent="center" mb="4px">
                 {icon}
+                <PureLinkExternal href={getEtherscanLink(chainId, hash, 'transaction')} color={color}>
+                  {summary ?? hash}
+                </PureLinkExternal>
               </Flex>
             </>
           )
