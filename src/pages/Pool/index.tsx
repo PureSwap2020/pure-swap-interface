@@ -1,6 +1,6 @@
 import React, { useContext, useMemo } from 'react'
 import { ThemeContext } from 'styled-components'
-import { Pair } from '@forever9/mxswap-sdk'
+import { Pair } from '@pancakeswap-libs/sdk'
 import { Button, CardBody, Text } from '@pancakeswap-libs/uikit'
 import { Link } from 'react-router-dom'
 import CardNav from 'components/CardNav'
@@ -59,13 +59,14 @@ export default function Pool() {
   const allV2PairsWithLiquidity = v2Pairs.map(([, pair]) => pair).filter((v2Pair): v2Pair is Pair => Boolean(v2Pair))
 
   const hasV1Liquidity = useUserHasLiquidityInAllTokens()
+  const isFullWidth = true
 
   return (
     <>
       <CardNav activeIndex={1} />
       <AppBody>
         <PageHeader title="Liquidity" description="Add liquidity to receive LP tokens">
-          <Button id="join-pool-button" as={Link} to="/add/ETH">
+          <Button variant="secondary" fullWidth={isFullWidth} id="join-pool-button" as={Link} to="/add/ETH">
             <TranslatedText translationId={100}>Add Liquidity</TranslatedText>
           </Button>
         </PageHeader>

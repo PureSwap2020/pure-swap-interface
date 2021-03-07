@@ -1,4 +1,4 @@
-import { CurrencyAmount, ETHER, JSBI } from '@forever9/mxswap-sdk'
+import { CurrencyAmount, ETHER, JSBI } from '@pancakeswap-libs/sdk'
 import { MIN_ETH } from '../constants'
 
 /**

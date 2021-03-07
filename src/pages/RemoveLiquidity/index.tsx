@@ -3,7 +3,7 @@ import styled, { ThemeContext } from 'styled-components'
 import { splitSignature } from '@ethersproject/bytes'
 import { Contract } from '@ethersproject/contracts'
 import { TransactionResponse } from '@ethersproject/providers'
-import { Currency, currencyEquals, ETHER, Percent, WETH } from '@forever9/mxswap-sdk'
+import { Currency, currencyEquals, ETHER, Percent, WETH } from '@pancakeswap-libs/sdk'
 import { Button, Flex, Text } from '@pancakeswap-libs/uikit'
 import { ArrowDown, Plus } from 'react-feather'
 import { RouteComponentProps } from 'react-router'
@@ -385,7 +385,7 @@ export default function RemoveLiquidity({
             </RowBetween>
           </>
         )}
-        <Button disabled={!(approval === ApprovalState.APPROVED || signatureData !== null)} onClick={onRemove}>
+        <Button variant="secondary" disabled={!(approval === ApprovalState.APPROVED || signatureData !== null)} onClick={onRemove}>
           Confirm
         </Button>
       </>
@@ -633,7 +633,7 @@ export default function RemoveLiquidity({
                   <RowBetween>
                     <Button
                       onClick={onAttemptToApprove}
-                      variant={approval === ApprovalState.APPROVED || signatureData !== null ? 'success' : 'primary'}
+                      variant={approval === ApprovalState.APPROVED || signatureData !== null ? 'success' : 'secondary'}
                       disabled={approval !== ApprovalState.NOT_APPROVED || signatureData !== null}
                       mr="8px"
                     >
@@ -653,7 +653,7 @@ export default function RemoveLiquidity({
                       variant={
                         !isValid && !!parsedAmounts[Field.CURRENCY_A] && !!parsedAmounts[Field.CURRENCY_B]
                           ? 'danger'
-                          : 'primary'
+                          : 'secondary'
                       }
                     >
                       {error || 'Remove'}

@@ -1,4 +1,4 @@
-import { Trade } from '@forever9/mxswap-sdk'
+import { Trade } from '@pancakeswap-libs/sdk'
 import React, { Fragment, memo, useContext } from 'react'
 import { ChevronRight } from 'react-feather'
 import { Flex } from '@pancakeswap-libs/uikit'

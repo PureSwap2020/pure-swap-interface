@@ -1,4 +1,4 @@
-import { Currency, ETHER, JSBI, TokenAmount } from '@forever9/mxswap-sdk'
+import { Currency, ETHER, JSBI, TokenAmount } from '@pancakeswap-libs/sdk'
 import React, { useCallback, useEffect, useState } from 'react'
 import { Button, ChevronDownIcon, AddIcon, CardBody, Text } from '@pancakeswap-libs/uikit'
 import CardNav from 'components/CardNav'
@@ -83,6 +83,7 @@ export default function PoolFinder() {
         <CardBody>
           <AutoColumn gap="md">
             <Button
+              variant="secondary"
               onClick={() => {
                 setShowSearch(true)
                 setActiveField(Fields.TOKEN0)
@@ -99,6 +100,7 @@ export default function PoolFinder() {
             </ColumnCenter>
 
             <Button
+              variant="secondary"
               onClick={() => {
                 setShowSearch(true)
                 setActiveField(Fields.TOKEN1)

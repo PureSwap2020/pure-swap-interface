@@ -1,4 +1,4 @@
-import { Token } from '@forever9/mxswap-sdk'
+import { Token } from '@pancakeswap-libs/sdk'
 import { transparentize } from 'polished'
 import { Button, Text } from '@pancakeswap-libs/uikit'
 import React, { useCallback, useMemo, useState } from 'react'
@@ -76,7 +76,7 @@ function TokenWarningCard({ token }: TokenWarningCardProps) {
           </Main>
           {chainId && (
             <ExternalLink style={{ fontWeight: 400 }} href={getEtherscanLink(chainId, token.address, 'token')}>
-              <Blue title={token.address}>{shortenAddress(token.address)} (View on HecoScan)</Blue>
+              <Blue title={token.address}>{shortenAddress(token.address)} (View on BscScan)</Blue>
             </ExternalLink>
           )}
         </AutoColumn>

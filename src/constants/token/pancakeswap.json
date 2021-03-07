@@ -21,9 +21,31 @@
       "decimals": 18
     },
     {
+      "name": "PURE",
+      "symbol": "PURE",
+      "address": "0x941bA89b5b06cfC1a6e3f378C392E2b72B598089",
+      "chainId": 256,
+      "decimals": 18
+    },
+    {
+      "name": "HBTC",
+      "symbol": "HBTC",
+      "address": "0x0Ff9a9B608353D8472D7CbB11DAa22BE1DFe3999",
+      "chainId": 256,
+      "decimals": 18,
+      "logoURI": "https://assets.coingecko.com/coins/images/12407/small/Unknown-5.png?1599624896"
+    },
+    {
       "name": "USDC",
       "symbol": "USDC",
       "address": "0xd459Dad367788893c17c09e17cFBF0bf25c62833",
+      "chainId": 256,
+      "decimals": 6
+    },
+    {
+      "name": "USDT",
+      "symbol": "USDT",
+      "address": "0xC9F905ccaCcE84E99Afa41E7C54b7e5dab757484",
       "chainId": 256,
       "decimals": 6
     },

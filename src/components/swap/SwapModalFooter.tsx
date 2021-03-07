@@ -1,4 +1,4 @@
-import { Trade, TradeType } from '@forever9/mxswap-sdk'
+import { Trade, TradeType } from '@pancakeswap-libs/sdk'
 import React, { useMemo, useState } from 'react'
 import { Text , Button } from '@pancakeswap-libs/uikit'
 import { Repeat } from 'react-feather'
@@ -15,6 +15,7 @@ import QuestionHelper from '../QuestionHelper'
 import { AutoRow, RowBetween, RowFixed } from '../Row'
 import FormattedPriceImpact from './FormattedPriceImpact'
 import { StyledBalanceMaxMini, SwapCallbackError } from './styleds'
+import { PureText } from '../styles'
 
 export default function SwapModalFooter({
   trade,
@@ -41,7 +42,7 @@ export default function SwapModalFooter({
     <>
       <AutoColumn gap="0px">
         <RowBetween align="center">
-          <Text fontSize="14px">Price</Text>
+          <PureText fontSize="14px">Price</PureText>
           <Text
             fontSize="14px"
             style={{
@@ -62,9 +63,9 @@ export default function SwapModalFooter({
 
         <RowBetween>
           <RowFixed>
-            <Text fontSize="14px">
+            <PureText fontSize="14px">
               {trade.tradeType === TradeType.EXACT_INPUT ? 'Minimum received' : 'Maximum sold'}
-            </Text>
+            </PureText>
             <QuestionHelper text="Your transaction will revert if there is a large, unfavorable price movement before it is confirmed." />
           </RowFixed>
           <RowFixed>
@@ -82,14 +83,14 @@ export default function SwapModalFooter({
         </RowBetween>
         <RowBetween>
           <RowFixed>
-            <Text fontSize="14px">Price Impact</Text>
+            <PureText fontSize="14px">Price Impact</PureText>
             <QuestionHelper text="The difference between the market price and your price due to trade size." />
           </RowFixed>
           <FormattedPriceImpact priceImpact={priceImpactWithoutFee} />
         </RowBetween>
         <RowBetween>
           <RowFixed>
-            <Text fontSize="14px">Liquidity Provider Fee</Text>
+            <PureText fontSize="14px">Liquidity Provider Fee</PureText>
             <QuestionHelper text="For each trade a 0.2% fee is paid. 0.17% goes to liquidity providers and 0.03% goes to the PancakeSwap treasury." />
           </RowFixed>
           <Text fontSize="14px">
@@ -102,7 +103,7 @@ export default function SwapModalFooter({
         <Button
           onClick={onConfirm}
           disabled={disabledConfirm}
-          variant={severity > 2 ? 'danger' : 'primary'}
+          variant={severity > 2 ? 'danger' : 'secondary'}
           mt="10px"
           id="confirm-swap-or-send"
           fullWidth

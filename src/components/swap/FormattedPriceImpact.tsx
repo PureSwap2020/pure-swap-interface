@@ -1,4 +1,4 @@
-import { Percent } from '@forever9/mxswap-sdk'
+import { Percent } from '@pancakeswap-libs/sdk'
 import React from 'react'
 import { ONE_BIPS } from '../../constants'
 import { warningSeverity } from '../../utils/prices'

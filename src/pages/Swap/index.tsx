@@ -1,4 +1,4 @@
-import { CurrencyAmount, JSBI, Token, Trade } from '@forever9/mxswap-sdk'
+import { CurrencyAmount, JSBI, Token, Trade } from '@pancakeswap-libs/sdk'
 import React, { useCallback, useContext, useEffect, useMemo, useState } from 'react'
 import { ArrowDown } from 'react-feather'
 import { CardBody, ArrowDownIcon, Button, IconButton, Text, Flex, useModal } from '@pancakeswap-libs/uikit'
@@ -445,7 +445,7 @@ const Swap = () => {
               {!account ? (
                 <ConnectWalletButton fullWidth />
               ) : showWrap ? (
-                <Button disabled={Boolean(wrapInputError)} onClick={onWrap} fullWidth>
+                <Button variant="secondary" disabled={Boolean(wrapInputError)} onClick={onWrap} fullWidth>
                   {wrapInputError ??
                   (wrapType === WrapType.WRAP ? 'Wrap' : wrapType === WrapType.UNWRAP ? 'Unwrap' : null)}
                 </Button>
@@ -459,7 +459,7 @@ const Swap = () => {
                     onClick={approveCallback}
                     disabled={approval !== ApprovalState.NOT_APPROVED || approvalSubmitted}
                     style={{ width: '48%' }}
-                    variant={approval === ApprovalState.APPROVED ? 'success' : 'primary'}
+                    variant={approval === ApprovalState.APPROVED ? 'success' : 'secondary'}
                   >
                     {approval === ApprovalState.PENDING ? (
                       <AutoRow gap="6px" justify="center">
@@ -490,7 +490,7 @@ const Swap = () => {
                     disabled={
                       !isValid || approval !== ApprovalState.APPROVED || (priceImpactSeverity > 3 && !isExpertMode)
                     }
-                    variant={isValid && priceImpactSeverity > 2 ? 'danger' : 'primary'}
+                    variant={isValid && priceImpactSeverity > 2 ? 'danger' : 'secondary'}
                   >
                     {priceImpactSeverity > 3 && !isExpertMode
                       ? `Price Impact High`
@@ -514,7 +514,7 @@ const Swap = () => {
                   }}
                   id="swap-button"
                   disabled={!isValid || (priceImpactSeverity > 3 && !isExpertMode) || !!swapCallbackError}
-                  variant={isValid && priceImpactSeverity > 2 && !swapCallbackError ? 'danger' : 'primary'}
+                  variant={isValid && priceImpactSeverity > 2 && !swapCallbackError ? 'danger' : 'secondary'}
                   fullWidth
                 >
                   {swapInputError ||

@@ -6,8 +6,7 @@
   "dependencies": {
     "@crowdin/crowdin-api-client": "^1.8.16",
     "@ethersproject/experimental": "^5.0.1",
-    "@forever9/mxswap-sdk": "^1.0.5",
-    "@pancakeswap-libs/sdk": "1.0.1",
+    "@pancakeswap-libs/sdk": "file:../pancakeswap-sdk",
     "@pancakeswap-libs/uikit": "https://github.com/PureSwap2020/Pure-uikit.git",
     "@popperjs/core": "^2.4.4",
     "@reach/dialog": "^0.10.3",

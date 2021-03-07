@@ -26,9 +26,11 @@ const ThemeContextProvider: React.FC = ({ children }) => {
 
   return (
     <ThemeContext.Provider value={{ isDark, toggleTheme }}>
-      <SCThemeProvider theme={isDark ? dark : light}>{children}</SCThemeProvider>
+      <SCThemeProvider theme={dark}>{children}</SCThemeProvider>
     </ThemeContext.Provider>
   )
 }
+
+// {/*<SCThemeProvider theme={isDark ? dark : light}>{children}</SCThemeProvider>*/}
 
 export { ThemeContext, ThemeContextProvider }

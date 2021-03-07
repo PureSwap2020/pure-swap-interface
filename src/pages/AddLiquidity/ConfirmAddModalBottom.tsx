@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, Fraction, Percent } from '@forever9/mxswap-sdk'
+import { Currency, CurrencyAmount, Fraction, Percent } from '@pancakeswap-libs/sdk'
 import React from 'react'
 import { Button } from '@pancakeswap-libs/uikit'
 import { RowBetween, RowFixed } from '../../components/Row'
@@ -58,7 +58,7 @@ export function ConfirmAddModalBottom({
         <Body fontSize={14} color="#366061">Share of Pool:</Body>
         <Body fontSize={14}>{noLiquidity ? '100' : poolTokenPercentage?.toSignificant(4)}%</Body>
       </RowBetween>
-      <Button mt="20px" onClick={onAdd}>
+      <Button variant="secondary" fullWidth mt="20px" onClick={onAdd}>
         {noLiquidity ? 'Create Pool & Supply' : 'Confirm Supply'}
       </Button>
     </>

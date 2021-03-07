@@ -1,6 +1,6 @@
 import React, { useContext, useMemo } from 'react'
 import styled, { ThemeContext } from 'styled-components'
-import { Trade, TradeType } from '@forever9/mxswap-sdk'
+import { Trade, TradeType } from '@pancakeswap-libs/sdk'
 import { Button, Text } from '@pancakeswap-libs/uikit'
 import { ArrowDown, AlertTriangle } from 'react-feather'
 
@@ -18,6 +18,7 @@ const { main: Main } = TYPE
 const PriceInfoText = styled(Text)`
   font-style: italic;
   line-height: 1.3;
+  color: #366061;
 
   span {
     color: ${({ theme }) => theme.colors.primary};
@@ -51,16 +52,16 @@ export default function SwapModalHeader({
     <AutoColumn gap="md" style={{ marginTop: '20px' }}>
       <RowBetween align="flex-end">
         <RowFixed gap="0px">
-          <CurrencyLogo currency={trade.inputAmount.currency} size="24px" style={{ marginRight: '12px' }} />
+          <CurrencyLogo currency={trade.inputAmount.currency} size="20px" style={{ marginRight: '12px' }} />
           <Text
-            fontSize="24px"
+            fontSize="20px"
             color={showAcceptChanges && trade.tradeType === TradeType.EXACT_OUTPUT ? theme.colors.primary : 'text'}
           >
             {trade.inputAmount.toSignificant(6)}
           </Text>
         </RowFixed>
         <RowFixed gap="0px">
-          <Text fontSize="24px" style={{ marginLeft: '10px', fontWeight: 500 }}>
+          <Text fontSize="20px" style={{ marginLeft: '10px', fontWeight: 500 }}>
             {trade.inputAmount.currency.symbol}
           </Text>
         </RowFixed>
@@ -70,9 +71,9 @@ export default function SwapModalHeader({
       </RowFixed>
       <RowBetween align="flex-end">
         <RowFixed gap="0px">
-          <CurrencyLogo currency={trade.outputAmount.currency} size="24px" style={{ marginRight: '12px' }} />
+          <CurrencyLogo currency={trade.outputAmount.currency} size="20px" style={{ marginRight: '12px' }} />
           <Text
-            fontSize="24px"
+            fontSize="20px"
             style={{ marginLeft: '10px', fontWeight: 500 }}
             color={
               priceImpactSeverity > 2
@@ -86,7 +87,7 @@ export default function SwapModalHeader({
           </Text>
         </RowFixed>
         <RowFixed gap="0px">
-          <Text fontSize="24px" style={{ marginLeft: '10px', fontWeight: 500 }}>
+          <Text fontSize="20px" style={{ marginLeft: '10px', fontWeight: 500 }}>
             {trade.outputAmount.currency.symbol}
           </Text>
         </RowFixed>

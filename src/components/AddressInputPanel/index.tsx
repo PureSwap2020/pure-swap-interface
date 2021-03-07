@@ -106,7 +106,7 @@ export default function AddressInputPanel({
               </Black>
               {address && chainId && (
                 <ExternalLink href={getEtherscanLink(chainId, name ?? address, 'address')} style={{ fontSize: '14px' }}>
-                  (View on HecoScan)
+                  (View on BscScan)
                 </ExternalLink>
               )}
             </RowBetween>

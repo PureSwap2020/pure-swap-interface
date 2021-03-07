@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from 'react'
 import { BigNumber } from '@ethersproject/bignumber'
 import { TransactionResponse } from '@ethersproject/providers'
-import { Currency, currencyEquals, ETHER, TokenAmount, WETH } from '@forever9/mxswap-sdk'
+import { Currency, currencyEquals, ETHER, TokenAmount, WETH } from '@pancakeswap-libs/sdk'
 import { Button, CardBody, AddIcon, Text as UIKitText } from '@pancakeswap-libs/uikit'
 import { RouteComponentProps } from 'react-router-dom'
 import { LightCard } from 'components/Card'
@@ -400,6 +400,7 @@ export default function AddLiquidity({
                       <RowBetween>
                         {approvalA !== ApprovalState.APPROVED && (
                           <Button
+                            variant="secondary"
                             onClick={approveACallback}
                             disabled={approvalA === ApprovalState.PENDING}
                             style={{ width: approvalB !== ApprovalState.APPROVED ? '48%' : '100%' }}
@@ -413,6 +414,7 @@ export default function AddLiquidity({
                         )}
                         {approvalB !== ApprovalState.APPROVED && (
                           <Button
+                            variant="secondary"
                             onClick={approveBCallback}
                             disabled={approvalB === ApprovalState.PENDING}
                             style={{ width: approvalA !== ApprovalState.APPROVED ? '48%' : '100%' }}
@@ -438,7 +440,7 @@ export default function AddLiquidity({
                     variant={
                       !isValid && !!parsedAmounts[Field.CURRENCY_A] && !!parsedAmounts[Field.CURRENCY_B]
                         ? 'danger'
-                        : 'primary'
+                        : 'secondary'
                     }
                     fullWidth
                   >

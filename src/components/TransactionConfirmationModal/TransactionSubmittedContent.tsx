@@ -1,4 +1,4 @@
-import { ChainId } from '@forever9/mxswap-sdk'
+import { ChainId } from '@pancakeswap-libs/sdk'
 import React, { useContext } from 'react'
 import styled, { ThemeContext } from 'styled-components'
 import { Button, LinkExternal } from '@pancakeswap-libs/uikit'
@@ -35,7 +35,7 @@ const TransactionSubmittedContent = ({ onDismiss, chainId, hash }: TransactionSu
         </ConfirmedIcon>
         <AutoColumn gap="8px" justify="center">
           {chainId && hash && (
-            <PureLinkExternal href={getEtherscanLink(chainId, hash, 'transaction')}>View on HecoScan</PureLinkExternal>
+            <PureLinkExternal href={getEtherscanLink(chainId, hash, 'transaction')}>View on BscScan</PureLinkExternal>
           )}
           <Button style={{display: 'none'}} onClick={onDismiss} mt="20px">
             Close
