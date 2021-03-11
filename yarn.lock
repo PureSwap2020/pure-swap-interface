@@ -2096,9 +2096,8 @@
     tiny-warning "^1.0.3"
     toformat "^2.0.0"
 
-"@pancakeswap-libs/uikit@https://github.com/PureSwap2020/Pure-uikit.git":
+"@pancakeswap-libs/uikit@file:../Pure-uikit":
   version "0.11.0"
-  resolved "https://github.com/PureSwap2020/Pure-uikit.git#cab9e3718d6d9451cad273c2b16604abc20c9d5a"
   dependencies:
     "@types/lodash" "^4.14.162"
     "@types/styled-system" "^5.1.10"

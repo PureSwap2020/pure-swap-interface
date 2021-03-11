@@ -1,14 +1,14 @@
 import { ChainId, JSBI, Percent, Token, WETH } from '@pancakeswap-libs/sdk'
 
-export const ROUTER_ADDRESS = '0x8971c307272D1f4D074B74d01cBc2ed147DFA75E'
+export const ROUTER_ADDRESS = '0x35AFc14FDE8c149CA569Df9EA0d332F82b984A6e'
 
 // a list of tokens by chain
 type ChainTokenList = {
   readonly [chainId in ChainId]: Token[]
 }
 
-export const DAI = new Token(ChainId.MAINNET, '0x60d64Ef311a4F0E288120543A14e7f90E76304c6', 18, 'DAI', 'Dai Stablecoin')
-export const USDT = new Token(ChainId.MAINNET, '0x04F535663110A392A6504839BEeD34E019FdB4E0', 18, 'USDT', 'Tether USD')
+export const DAI = new Token(ChainId.MAINNET, '0x1af3f329e8be154074d8769d1ffa4ee058b1dbc3', 18, 'DAI', 'Dai Stablecoin')
+export const USDT = new Token(ChainId.MAINNET, '0x55d398326f99059ff775485246999027b3197955', 18, 'USDT', 'Tether USD')
 
 const WETH_ONLY: ChainTokenList = {
   [ChainId.MAINNET]: [WETH[ChainId.MAINNET]],

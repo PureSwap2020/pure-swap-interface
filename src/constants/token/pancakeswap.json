@@ -7,67 +7,45 @@
     "patch": 1
   },
   "tags": {},
-  "logoURI": "https://assets.coingecko.com/coins/images/2822/thumb/huobi-token-logo.png?1547036992",
+  "logoURI": "https://assets.coingecko.com/coins/images/825/small/binance-coin-logo.png?1547034615",
   "keywords": [
     "pancake",
     "default"
   ],
   "tokens": [
     {
-      "name": "DAI",
-      "symbol": "DAI",
-      "address": "0x60d64Ef311a4F0E288120543A14e7f90E76304c6",
-      "chainId": 256,
+      "name": "BTCB",
+      "symbol": "BTCB",
+      "address": "0x89fE8DdD4aD3d72a99d6f0F4141D73E64d3Af75a",
+      "chainId": 97,
       "decimals": 18
     },
     {
       "name": "PURE",
       "symbol": "PURE",
-      "address": "0x941bA89b5b06cfC1a6e3f378C392E2b72B598089",
-      "chainId": 256,
+      "address": "0x9CB09Ee4bCD56d1C622F93297FFEf9c976651263",
+      "chainId": 97,
       "decimals": 18
     },
     {
-      "name": "HBTC",
-      "symbol": "HBTC",
-      "address": "0x0Ff9a9B608353D8472D7CbB11DAa22BE1DFe3999",
-      "chainId": 256,
-      "decimals": 18,
-      "logoURI": "https://assets.coingecko.com/coins/images/12407/small/Unknown-5.png?1599624896"
-    },
-    {
-      "name": "USDC",
-      "symbol": "USDC",
-      "address": "0xd459Dad367788893c17c09e17cFBF0bf25c62833",
-      "chainId": 256,
-      "decimals": 6
+      "name": "BUSD",
+      "symbol": "BUSD",
+      "address": "0xB2e59F7bA3Be8E72a2324Dc39D4f4896daa42365",
+      "chainId": 97,
+      "decimals": 18
     },
     {
       "name": "USDT",
       "symbol": "USDT",
-      "address": "0xC9F905ccaCcE84E99Afa41E7C54b7e5dab757484",
-      "chainId": 256,
+      "address": "0x7de426D027f33FD8FA59adfD733A99f974781bf4",
+      "chainId": 97,
       "decimals": 6
     },
     {
-      "name": "SNX",
-      "symbol": "SNX",
-      "address": "0x087Ed0d3CA0Ed342AD4Ad3439F8174b41e2Ba47D",
-      "chainId": 256,
-      "decimals": 18
-    },
-    {
-      "name": "HETH",
-      "symbol": "HETH",
-      "address": "0xfeB76Ae65c11B363Bd452afb4A7eC59925848656",
-      "chainId": 256,
-      "decimals": 18
-    },
-    {
-      "name": "link",
-      "symbol": "LINK",
-      "address": "0x3E24e9d2c824B0ac2C82edc931B67252099B8e79",
-      "chainId": 256,
+      "name": "MX",
+      "symbol": "MX",
+      "address": "0x920084a10f03DA45Cfd98fd2a388575c934DaEeA",
+      "chainId": 97,
       "decimals": 18
     }
   ]

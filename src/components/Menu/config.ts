@@ -2,6 +2,11 @@ import { MenuEntry } from '@pancakeswap-libs/uikit'
 
 const config: MenuEntry[] = [
   {
+    label: 'Home',
+    icon: 'HomeIcon',
+    href: 'http://pureswap.finance'
+  },
+  {
     label: 'Trade',
     icon: 'TradeIcon',
     initialOpenState: true,
@@ -27,20 +32,21 @@ const config: MenuEntry[] = [
     href: 'http://pureswap.finance/pools',
   },
   {
-    label: 'IFO',
-    icon: 'IfoIcon',
-    href: 'http://pureswap.finance/ifo',
-  },
-  {
     label: 'More',
     icon: 'MoreIcon',
     items: [
       {
         label: 'Github',
-        href: 'https://github.com/pancakeswap',
+        href: 'https://github.com/PureSwap2020',
       },
     ],
   },
 ]
+
+// {
+//   label: 'IFO',
+//     icon: 'IfoIcon',
+//   href: 'http://pureswap.finance/ifo',
+// },
 
 export default config

@@ -40,7 +40,8 @@ function useMockV1Pair(inputCurrency?: Currency): MockV1Pair | undefined {
   const token = inputCurrency instanceof Token ? inputCurrency : undefined
 
   const isWETH = Boolean(token && token.equals(WETH[token.chainId]))
-  const v1PairAddress = useV1ExchangeAddress(isWETH ? undefined : token?.address)
+  // const v1PairAddress = useV1ExchangeAddress(isWETH ? undefined : token?.address)
+  const v1PairAddress = undefined
   const tokenBalance = useTokenBalance(v1PairAddress, token)
   const ETHBalance = useETHBalances([v1PairAddress])[v1PairAddress ?? '']
 
@@ -56,7 +57,7 @@ export function useAllTokenV1Exchanges(): { [exchangeAddress: string]: Token } {
   const allTokens = useAllTokens()
   const factory = useV1FactoryContract()
   const args = useMemo(() => Object.keys(allTokens).map((tokenAddress) => [tokenAddress]), [allTokens])
-
+  console.log(args)
   const data = useSingleContractMultipleData(factory, 'getExchange', args, NEVER_RELOAD)
 
   return useMemo(
@@ -73,10 +74,11 @@ export function useAllTokenV1Exchanges(): { [exchangeAddress: string]: Token } {
 
 // returns whether any of the tokens in the user's token list have liquidity on v1
 export function useUserHasLiquidityInAllTokens(): boolean | undefined {
+  return false
   const { account, chainId } = useActiveWeb3React()
 
   const exchanges = useAllTokenV1Exchanges()
-
+  console.log(exchanges)
   const v1ExchangeLiquidityTokens = useMemo(
     () =>
       chainId ? Object.keys(exchanges).map((address) => new Token(chainId, address, 18, 'UNI-V1', 'Uniswap V1')) : [],

@@ -7,7 +7,7 @@
     "@crowdin/crowdin-api-client": "^1.8.16",
     "@ethersproject/experimental": "^5.0.1",
     "@pancakeswap-libs/sdk": "file:../pancakeswap-sdk",
-    "@pancakeswap-libs/uikit": "https://github.com/PureSwap2020/Pure-uikit.git",
+    "@pancakeswap-libs/uikit": "file:../Pure-uikit",
     "@popperjs/core": "^2.4.4",
     "@reach/dialog": "^0.10.3",
     "@reach/portal": "^0.10.3",

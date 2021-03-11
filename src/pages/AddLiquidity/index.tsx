@@ -150,6 +150,7 @@ export default function AddLiquidity({
       ]
       value = BigNumber.from((tokenBIsETH ? parsedAmountB : parsedAmountA).raw.toString())
     } else {
+      console.log(router)
       estimate = router.estimateGas.addLiquidity
       method = router.addLiquidity
       args = [
@@ -166,7 +167,9 @@ export default function AddLiquidity({
     }
 
     setAttemptingTxn(true)
+    console.log(args)
     // const aa = await estimate(...args, value ? { value } : {})
+    console.log(args)
     await estimate(...args, value ? { value } : {})
       .then((estimatedGasLimit) =>
         method(...args, {
@@ -185,24 +188,6 @@ export default function AddLiquidity({
         })
       )
       .catch((e) => {
-        method(...args, {
-          ...(value ? { value } : {}),
-          gasLimit: calculateGasMargin(BigNumber.from("33000")),
-        }).then((response) => {
-          console.log(args)
-          console.log(response)
-          setAttemptingTxn(false)
-
-          addTransaction(response, {
-            summary: `Add ${parsedAmounts[Field.CURRENCY_A]?.toSignificant(3)} ${
-              currencies[Field.CURRENCY_A]?.symbol
-            } and ${parsedAmounts[Field.CURRENCY_B]?.toSignificant(3)} ${currencies[Field.CURRENCY_B]?.symbol}`,
-          })
-
-          setTxHash(response.hash)
-        }).catch((err) => {
-          console.log(err)
-        })
         setAttemptingTxn(false)
         // we only care if the error is something _other_ than the user rejected the tx
         if (e?.code !== 4001) {

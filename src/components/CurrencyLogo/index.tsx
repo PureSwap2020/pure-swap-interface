@@ -46,7 +46,7 @@ export default function CurrencyLogo({
   }, [currency, uriLocations])
 
   if (currency === ETHER) {
-    return <StyledBnbLogo src="https://assets.coingecko.com/coins/images/2822/thumb/huobi-token-logo.png?1547036992" size={size} style={style} />
+    return <StyledBnbLogo src="https://assets.coingecko.com/coins/images/825/small/binance-coin-logo.png?1547034615" size={size} style={style} />
   }
 
   return (currency as any)?.symbol ? (
