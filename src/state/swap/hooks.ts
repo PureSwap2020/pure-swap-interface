@@ -3,21 +3,21 @@ import { Currency, CurrencyAmount, ETHER, JSBI, Token, TokenAmount, Trade } from
 import { ParsedQs } from 'qs'
 import { useCallback, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import useToggledVersion, { Version } from '../../hooks/useToggledVersion'
-import useENS from '../../hooks/useENS'
 import { useV1Trade } from '../../data/V1'
 import { useActiveWeb3React } from '../../hooks'
 import { useCurrency } from '../../hooks/Tokens'
 import { useTradeExactIn, useTradeExactOut } from '../../hooks/Trades'
+import useENS from '../../hooks/useENS'
 import useParsedQueryString from '../../hooks/useParsedQueryString'
+import useToggledVersion, { Version } from '../../hooks/useToggledVersion'
 import { isAddress } from '../../utils'
+import { computeSlippageAdjustedAmounts } from '../../utils/prices'
 import { AppDispatch, AppState } from '../index'
+import { useUserSlippageTolerance } from '../user/hooks'
 import { useCurrencyBalances } from '../wallet/hooks'
 import { Field, replaceSwapState, selectCurrency, setRecipient, switchCurrencies, typeInput } from './actions'
 import { SwapState } from './reducer'
 
-import { useUserSlippageTolerance } from '../user/hooks'
-import { computeSlippageAdjustedAmounts } from '../../utils/prices'
 
 export function useSwapState(): AppState['swap'] {
   return useSelector<AppState, AppState['swap']>((state) => state.swap)
@@ -35,7 +35,7 @@ export function useSwapActionHandlers(): {
       dispatch(
         selectCurrency({
           field,
-          currencyId: currency instanceof Token ? currency.address : currency === ETHER ? 'ETH' : '',
+          currencyId: currency instanceof Token ? currency.address : currency === ETHER ? 'BNB' : '',
         })
       )
     },
