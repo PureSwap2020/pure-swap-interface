@@ -43,6 +43,10 @@ const config: MenuEntry[] = [
         label: 'Docs',
         href: 'https://pureswap.gitbook.io/introduction/',
       },
+      {
+        label: 'Audit Report',
+        href: 'https://github.com/PureSwap2020/pureswap-contracts/blob/main/CertiK%20Audit%20Report%20for%20Pureswap.pdf'
+      }
     ],
   },
 ]
