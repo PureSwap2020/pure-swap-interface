@@ -4,7 +4,7 @@ const config: MenuEntry[] = [
   {
     label: 'Home',
     icon: 'HomeIcon',
-    href: 'http://pureswap.finance'
+    href: 'http://pureswap.finance',
   },
   {
     label: 'Trade',
@@ -39,6 +39,14 @@ const config: MenuEntry[] = [
         label: 'Github',
         href: 'https://github.com/PureSwap2020',
       },
+      {
+        label: 'Docs',
+        href: 'https://pureswap.gitbook.io/introduction/',
+      },
+      {
+        label: 'Audit Report',
+        href: 'https://github.com/PureSwap2020/pureswap-contracts/blob/main/CertiK%20Audit%20Report%20for%20Pureswap.pdf'
+      }
     ],
   },
 ]

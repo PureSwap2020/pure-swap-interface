@@ -1,27 +1,26 @@
-import React, { useContext, useMemo } from 'react'
-import { ThemeContext } from 'styled-components'
 import { Pair } from '@pureswap-libs/sdk'
 import { Button, CardBody, Text } from '@pureswap-libs/uikit'
-import { Link } from 'react-router-dom'
-import CardNav from 'components/CardNav'
-import Question from 'components/QuestionHelper'
-import FullPositionCard from 'components/PositionCard'
-import { useUserHasLiquidityInAllTokens } from 'data/V1'
-import { useTokenBalancesWithLoadingIndicator } from 'state/wallet/hooks'
-import { StyledInternalLink, TYPE } from 'components/Shared'
 import { LightCard } from 'components/Card'
-import { RowBetween } from 'components/Row'
+import CardNav from 'components/CardNav'
 import { AutoColumn } from 'components/Column'
-
-import { useActiveWeb3React } from 'hooks'
-import { usePairs } from 'data/Reserves'
-import { toV2LiquidityToken, useTrackedTokenPairs } from 'state/user/hooks'
+import PageHeader from 'components/PageHeader'
+import FullPositionCard from 'components/PositionCard'
+import Question from 'components/QuestionHelper'
+import { RowBetween } from 'components/Row'
+import { StyledInternalLink, TYPE } from 'components/Shared'
 import { Dots } from 'components/swap/styleds'
 import TranslatedText from 'components/TranslatedText'
+import { usePairs } from 'data/Reserves'
+import { useUserHasLiquidityInAllTokens } from 'data/V1'
+import { useActiveWeb3React } from 'hooks'
+import React, { useContext, useMemo } from 'react'
+import { Link } from 'react-router-dom'
+import { toV2LiquidityToken, useTrackedTokenPairs } from 'state/user/hooks'
+import { useTokenBalancesWithLoadingIndicator } from 'state/wallet/hooks'
+import { ThemeContext } from 'styled-components'
 import { TranslateString } from 'utils/translateTextHelpers'
-import PageHeader from 'components/PageHeader'
-import AppBody from '../AppBody'
 import { PureText } from '../../components/styles'
+import AppBody from '../AppBody'
 
 const { body: Body } = TYPE
 
@@ -66,7 +65,7 @@ export default function Pool() {
       <CardNav activeIndex={1} />
       <AppBody>
         <PageHeader title="Liquidity" description="Add liquidity to receive LP tokens">
-          <Button variant="secondary" fullWidth={isFullWidth} id="join-pool-button" as={Link} to="/add/ETH">
+          <Button variant="secondary" fullWidth={isFullWidth} id="join-pool-button" as={Link} to="/add/BNB">
             <TranslatedText translationId={100}>Add Liquidity</TranslatedText>
           </Button>
         </PageHeader>
@@ -121,7 +120,7 @@ export default function Pool() {
                   </StyledInternalLink>
                 </PureText>
                 <PureText fontSize="14px" style={{ padding: '.5rem 0 .5rem 0' }}>
-                  Or, if you staked your FLIP tokens in a farm, unstake them to see them here.
+                  Or, if you staked your PLP tokens in a farm, unstake them to see them here.
                 </PureText>
               </div>
             </AutoColumn>
