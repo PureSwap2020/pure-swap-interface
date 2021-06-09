@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit'
 import { save, load } from 'redux-localstorage-simple'
 
@@ -26,6 +27,7 @@ if (loadedState.user) {
   loadedState.user.userDarkMode = getThemeCache()
 }
 
+// @ts-ignore
 const store = configureStore({
   reducer: {
     application,
