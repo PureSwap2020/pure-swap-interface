@@ -1,7 +1,7 @@
 import { ChainId } from '@pureswap-libs/sdk'
 import React, { useContext } from 'react'
 import styled, { ThemeContext } from 'styled-components'
-import { Button, LinkExternal } from '@pancakeswap-libs/uikit'
+import { Button, LinkExternal } from '@pureswap-libs/uikit'
 import { ArrowUpCircle } from 'react-feather'
 import { AutoColumn } from '../Column'
 import { getEtherscanLink } from '../../utils'

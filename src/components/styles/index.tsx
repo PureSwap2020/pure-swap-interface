@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Card, Text } from '@pancakeswap-libs/uikit'
+import { Card, Text } from '@pureswap-libs/uikit'
 
 export const PureCard = styled(Card)`
   background-color: #082F33;

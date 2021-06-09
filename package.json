@@ -6,8 +6,8 @@
   "dependencies": {
     "@crowdin/crowdin-api-client": "^1.8.16",
     "@ethersproject/experimental": "^5.0.1",
+    "@pureswap-libs/sdk": "^1.0.1",
     "@pureswap-libs/uikit": "^0.11.1",
-    "@pancakeswap-libs/uikit": "file:../Pure-uikit",
     "@popperjs/core": "^2.4.4",
     "@reach/dialog": "^0.10.3",
     "@reach/portal": "^0.10.3",
