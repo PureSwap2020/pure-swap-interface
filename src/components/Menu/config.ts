@@ -31,6 +31,11 @@ const config: MenuEntry[] = [
     icon: 'PoolIcon',
     href: 'http://pureswap.finance/pools',
   },
+  // {
+  //   label: 'IFO',
+  //   icon: 'NewIFOIcon',
+  //   href: 'https://pureswap.finance/ifo',
+  // },
   {
     label: 'More',
     icon: 'MoreIcon',
