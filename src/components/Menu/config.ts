@@ -34,7 +34,7 @@ const config: MenuEntry[] = [
   // {
   //   label: 'IFO',
   //   icon: 'NewIFOIcon',
-  //   href: 'https://pureswap.finance/ifo',
+  //   href: 'https://www.pureswap.finance/ifo',
   // },
   {
     label: 'More',
