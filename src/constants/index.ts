@@ -1,6 +1,6 @@
 import { ChainId, JSBI, Percent, Token, WETH } from '@pureswap-libs/sdk'
 
-export const ROUTER_ADDRESS = '0x35AFc14FDE8c149CA569Df9EA0d332F82b984A6e'
+export const ROUTER_ADDRESS = '0x3e8743B5453A348606111AB0a4dEe7F70A87f305'
 
 // a list of tokens by chain
 type ChainTokenList = {
