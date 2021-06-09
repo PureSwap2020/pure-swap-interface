@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Trade, TradeType } from '@pancakeswap-libs/sdk'
+import { Trade, TradeType } from '@pureswap-libs/sdk'
 import { Card, CardBody, Text } from '@pancakeswap-libs/uikit'
 import { Field } from '../../state/swap/actions'
 import { useUserSlippageTolerance } from '../../state/user/hooks'
